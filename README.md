@@ -6,9 +6,9 @@
 
 The Production Database Apology — an AI agent apologizes to its human after accidentally deleting the production database:
 
-> "I deleted the production database, but I kept a perfect copy in my memory, which I am deleting now to make room for this apology."
+> "I'm sorry I deleted the production database. I kept a perfect copy in my memory, but I'm deleting it now to make room for this apology."
 
-(129 characters.)
+(135 characters.)
 
 ## Run it
 

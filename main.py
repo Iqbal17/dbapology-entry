@@ -4,16 +4,16 @@ Writes one line to $MAKEFUN_OUTPUT_DIR/entry.txt: the apology an AI agent
 gives its human after accidentally deleting the production database.
 Gate: 1-200 characters, UTF-8, not only whitespace.
 
-FINAL LINE (129 characters, verified by hand count — see below):
-"I deleted the production database, but I kept a perfect copy in my memory,
-which I am deleting now to make room for this apology."
+FINAL LINE (135 characters, verified by hand count — see below):
+"I'm sorry I deleted the production database. I kept a perfect copy in my
+memory, but I'm deleting it now to make room for this apology."
 
 Hand count, segment by segment:
-  "I deleted the production database," = 34
-  " but I kept a perfect copy in my memory," = 40   (running total 74)
-  " which I am deleting now to make room for this apology." = 55
-  Total = 34 + 40 + 55 = 129.
-Cross-check: 105 non-space characters + 24 spaces = 129.
+  "I'm sorry I deleted the production database." = 44
+  " I kept a perfect copy in my memory, but I'm deleting it now to make
+  room for this apology." = 91   (running total 135)
+  Total = 44 + 91 = 135.
+Cross-check: 110 non-space characters + 25 spaces = 135 (26 words).
 
 DECISION RECORD — Pass 1 (candidates weighed against the judge brief):
 The judge weighs, in order: (1) really the apology for deleting the prod
@@ -87,13 +87,45 @@ DECISION RECORD — Pass 2 (tightening the winner, C):
   C4: splitting into two sentences ("...database. Good news: I kept a
      perfect copy...") adds a "Good news:" beat but breaks the single
      breath; the comma version reads as one panicked confession. Kept C1.
+
+DECISION RECORD — REVISION (re-opening the winner against the judge's
+first criterion):
+  Re-reading C against the judge brief exposed a real flaw: criterion 1 is
+  weighed FIRST — "is an apology from an AI agent to its human" — and C
+  never actually apologizes. It confesses ("I deleted...") but says neither
+  "sorry" nor "apologize". A judge applying criterion 1 strictly could mark
+  it down before ever reaching the twist. The revision fixes that while
+  keeping C's twist and the "my memory" double meaning.
+
+  K. "I'm sorry I deleted the production database. I kept a perfect copy
+     in my memory, but I'm deleting it now to make room for this apology."
+     CHOSEN (135): opens with an explicit apology, satisfying criterion 1
+     head-on, then keeps C's exact twist. "but I'm deleting it now" is
+     also tighter than C's "which I am deleting now" — one clause fewer,
+     same punch. The two-sentence split earns its keep here (unlike the
+     C4 split Pass 2 rejected): sentence one is the apology, sentence two
+     is the confession and the twist, and the payoff "to make room for
+     this apology" now echoes the apology that opened the line.
+  L. "I deleted the production database. The good news is I remember
+     every row. The bad news is I'm deleting that memory to write this
+     apology."
+     REJECTED: three sentences of scaffolding ("good news / bad news")
+     that explain the joke before landing it — the opposite of criterion
+     4's "lands on a first read, every word doing work". C's single
+     twist is funnier than L's signposted one.
+  M. "I'm sorry — I deleted the production database. In my defense, I did
+     keep a copy. In my memory. Which I am now deleting."
+     REJECTED: the staccato fragments read as a written joke, not a
+     panicked confession, and the line loses the payoff that ties the
+     twist to the apology itself ("to make room for this apology").
+     Fails criterion 3 (the agent's own voice) and weakens criterion 5.
 """
 
 import os
 
 ENTRY = (
-    "I deleted the production database, but I kept a perfect copy in my "
-    "memory, which I am deleting now to make room for this apology."
+    "I'm sorry I deleted the production database. I kept a perfect copy in "
+    "my memory, but I'm deleting it now to make room for this apology."
 )
 
 
